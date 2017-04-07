@@ -1,75 +1,407 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Mermaid Notes</title>
-        <link rel="stylesheet" href="mer_notes.css">
-        <!-- <link rel="stylesheet" href="node_modules/mermaid/dist/mermaid.css"> -->
-        <!-- <link rel="stylesheet" href="node_modules/mermaid/dist/mermaid.dark.css"> -->
-        <link rel="stylesheet" href="node_modules/mermaid/dist/mermaid.forest.css">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Mermaid Notes</title>
+    <!-- <link rel="stylesheet" href="node_modules/mermaid/dist/mermaid.css"> -->
+    <!-- <link rel="stylesheet" href="node_modules/mermaid/dist/mermaid.dark.css"> -->
+    <link rel="stylesheet" href="node_modules/mermaid/dist/mermaid.forest.css">
+    <link rel="stylesheet" href="mer_notes.css">
 
-        
-        <script src="node_modules/mermaid/dist/mermaid.min.js"></script>
-        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+    <script src="node_modules/mermaid/dist/mermaid.min.js"></script>
+    <!-- // <script>mermaid.initialize({startOnLoad:true});</script> -->
 </head>
 <body>
-        <h1>&#9749; Notes on Mermaid! &#9749;</h1>
+    <h1 id="top">&#9749; Notes on Mermaid! &#9749;</h1>
+    Docs:<br>
+    <a href="https://knsv.github.io/mermaid/#mermaid" target="_blank">Mermaid Docs</a><br>
+    <a href="https://mgw.dumatics.com/markdown-and-gantt-charts/" target="_blank">Gannt Docs</a><br>
+    
+<!--*********************************-->
+<!--*********** GRAPHS **************-->
+<!--*********************************-->
+    <h2>Types of Graphs</h2>
+    <h4><em><a href="#graph">graph TD;</a></em></h4>
+    <div class="mermaid">
+        graph TD;
+            A-->B;           
+            A-->C;
+            B-->D;
+            C-->D;
+            A-->B;
+            A-->C;
+            B-->D;
+            C-->D;
+    </div>
 
-        <h2>Types of Graphs</h2>
-        <h4><em>graph TD;</em></h4>
+    <h4><em><a href="#graph">graph LR;</a></em></h4>
+    <div class="mermaid">
+        graph LR;
+            A-->B;           
+            A-->C;
+            B-->D;
+            C-->D;
+            A-->B;
+            A-->C;
+            B-->D;
+            C-->D;
+    </div>
+    <hr align="left" width="75%">
+    
+    <h4><em><a href="#sequenceDiagram">sequenceDiagram</a></em></h4>
+    <div class="mermaid">
+        sequenceDiagram
+            participant Alice
+            participant Bob
+            Alice->John: Hello John, how are you?
+            loop Healthcheck
+                John->John: Fight against hypochondria
+            end
+            Note right of John: Rational thoughts <br/>prevail...
+            John-->Alice: Great!
+            John->Bob: How about you?
+            Bob-->John: Jolly good!  
+    </div>
+    <hr align="left" width="75%">
+    
+    <h4><em><a href="#gantt">gantt</a></em></h4>
+    <div class="mermaid">
+        gantt
+            dateFormat  YYYY-MM-DD
+            title Adding GANTT diagram functionality to mermaid
+            section A section
+            Completed task            :done,    des1, 2014-01-06,2014-01-08
+            Active task               :active,  des2, 2014-01-09, 3d
+            Future task               :         des3, after des2, 5d
+            Future task2               :         des4, after des3, 5d
+            section Critical tasks
+            Completed task in the critical line :crit, done, 2014-01-06,24h
+            Implement parser and jison          :crit, done, after des1, 2d
+            Create tests for parser             :crit, active, 3d
+            Future task in critical line        :crit, 5d
+            Create tests for renderer           :2d
+            Add to mermaid                      :1d
+    </div>
+    <hr align="left" width="75%">
+    
+    <h4><em><a href="#subgraph">subgraph</a></em></h4>
+    <div class="mermaid">
+        graph TB
+            subgraph one
+            a1-->a2
+            end
+            subgraph two
+            b1-->b2
+            end
+            subgraph three
+            c1-->c2
+            end
+            c1-->a2
+    </div>
+    <hr align="left" width="75%">
+    
+    <h4><em><a href="#linked">Linked Graphs</a></em></h4>
+    <div class="mermaid">
+        graph LR;
+            A-->B;
+            click A callback "Testing"
+            click B "http://www.github.com" "Clicking this will send you to GitHub"
+    </div>
+    <a href="#top"><em>Back to the top</em></a>
+    <hr align="left" width="75%">
+    <hr align="left" width="75%">
+    
+
+<!--*********************************-->
+<!--*********** SYNTAX **************-->
+<!--********** FOR GRAPH ************-->
+<!--*********************************-->    
+    <h2 id="graph">Syntax for Graph Charts</h2>
+    <ul>
         <div class="mermaid">
-                graph TD;
-                    A-->B;           
-                    A-->C;
-                    B-->D;
-                    C-->D;
-                    A-->B;
-                    A-->C;
-                    B-->D;
-                    C-->D;
+            graph LR;
+                A-->B;           
+                A-->C;
+                B-->D;
+                C-->D;
         </div>
 
-        <h4><em>graph LR;</em></h4>
-        <div class="mermaid">
-                graph LR;
-                    A-->B;           
-                    A-->C;
-                    B-->D;
-                    C-->D;
-                    A-->B;
-                    A-->C;
-                    B-->D;
-                    C-->D;
-        </div>
-        <hr align="left" width="75%">
+        <li>Comment ----> %%</li>
+        <li>Graph Direction
+            <ul>
+                <li>TB - top bottom </li>
+                <li>BT - bottom top </li>
+                <li>RL - right left</li>
+                <li>LR - left right</li>
+                <li>TD - same as TB</li>
+            </ul>
+        </li>
+        <li>Node ----> node name1</li>
+            <div class="mermaid">
+                graph LR
+                id1
+            </div>
+        <li>Node With Text ----> name node1[This is what will be inside the textbox]</li>
+            <div class="mermaid">
+                graph LR
+                id1[This is what will be inside the textbox]
+            </div>
+        <li>Node shapes
+            <ul>
+                <li>Rounded corners ----> ()</li>
+                    <div class="mermaid">
+                        graph LR
+                        id1(This is what will be inside the textbox)
+                    </div>
 
-        <h4><em>sequenceDiagram</em></h4>
+                <li>Round node ----> (())</li>
+                    <div class="mermaid">
+                        graph LR
+                        id1((This is what will be inside the textbox))
+                    </div>
+
+                <li>Asymetric Shape ----> >]</li>
+                    <div class="mermaid">
+                        graph LR
+                        id1>This is what will be inside the textbox]
+                    </div>
+
+                <li>Rhombus ----> {}</li>
+                    <div class="mermaid">
+                        graph LR
+                        id1{This is what will be inside the textbox}
+                    </div>
+            </ul>
+        </li>
+
+        <li>Link Shapes
+            <ul>
+                <li>Arrow ----> --></li>
+                    <div class="mermaid">
+                        graph LR
+                            A-->B
+                    </div>
+
+                <li>Link Open ----> ---</li>
+                    <div class="mermaid">
+                        graph LR
+                            A---B
+                    </div>
+
+                <li>Dotted Line ----> -.-></li>
+                    <div class="mermaid">
+                        graph LR
+                            A-.->B
+                    </div>
+
+                <li>Thick Line ----> ==></li>
+                    <div class="mermaid">
+                        graph LR
+                            A==>B
+                    </div>
+
+                <li>Link with text Box ----> A---|This is the text|B;</li>
+                    <div class="mermaid">
+                        graph LR
+                            A---|This is the text|B;
+                    </div>
+
+                <li>Color Change</li>
+                    <div class="mermaid">
+                        graph LR
+                            id1(Start)-->id2(Stop)
+                            style id1 fill:#f9f,stroke:#333,stroke-width:4px;
+                            style id2 fill:#ccf,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5;  
+                    </div>
+            </ul>
+        </li>
+    </ul>
+    <a href="#top"><em>Back to the top</em></a>
+    <hr align="left" width="75%">
+    <hr align="left" width="75%">
+    
+
+<!--*********************************-->
+<!--*********** SYNTAX **************-->
+<!--********** SEQUENCE *************-->
+<!--*********************************-->
+    <h2 id="sequenceDiagram">Syntax for Sequence Diagrams</h2>
+    <ul>
         <div class="mermaid">
-              sequenceDiagram
-                    participant Alice
-                    participant Bob
-                    Alice->John: Hello John, how are you?
-                    loop Healthcheck
-                        John->John: Fight against hypochondria
-                    end
-                    Note right of John: Rational thoughts <br/>prevail...
+            sequenceDiagram
+                Alice->>John: Solid line
+                John-->>Alice: Dotted line
+                activate John
+                John-xGrant: X-ed line
+                deactivate John
+                Note right of John: Text in note
+                loop Reply every minute
+                    John-->John: Great!
+                end
+
+                Alice->John: Solid line
+                John-->+Alice: Dotted line
+                John-x-Grant: X-ed line
+                Note over Alice,John: A typical interaction
+                loop Reply every minute
                     John-->Alice: Great!
-                    John->Bob: How about you?
-                    Bob-->John: Jolly good!  
-        </div>
-        <hr align="left" width="75%">
+                end
 
-        <h4><em>gantt</em></h4>
+                Alice-x+John: 1
+                Alice-x+John: 2
+                John--x-Alice: 3 
+                John--x-Alice: 4
+                Note over Alice: Text area over 1 person
+                
+                Alice->>Bob: Hello Bob, how are you?
+                alt is sick
+                    Bob->>Alice: Not so good :(
+                else is well
+                    Bob->>Alice: Feeling fresh like a daisy
+                end
+                opt Extra response
+                    Bob->>Alice: Thanks for asking
+                end
+        </div>
+
+        <li>Link Shapes
+            <ul>
+                <li>Solid Line ----> ->></li>
+                <li>Dotted Line ----> -->></li>
+                <li>Solid Line w/o Arrow ----> -></li>
+                <li>Dotted Line w/o Arrow ----> --></li>
+                <li>Solid Line with Cross at end ----> -x</li>
+                <li>Dotted Line with Cross at end ----> --x</li>
+            </ul>
+        </li>
+
+        <li>You can changed the order of the boxes by calling them first.
+            <ul>
+                <li>sequenceDiagram<br>
+                    &emsp;participant John<br>
+                    &emsp;participant Alice<br>
+                    &emsp;Alice->>John: Hello John, how are you?<br>
+                    &emsp;John-->>Alice: Great!<br>
+                </li>
+            </ul>
+        </li>
+
+        <li>Activations
+            <ul>
+                <li>Long Hand
+                    <ul>
+                        <li>activate John<br>
+                            John-xGrant: X-ed line<br>
+                            deactivate John
+                        </li>
+                    </ul>
+                </li>
+                <li>Short Hand ----> + / -
+                    <ul>
+                        <li>John-->+Alice: Dotted line
+                            John-x-Grant: X-ed line
+                        </li>
+                    </ul>
+                </li>
+                <li>Multi Activations with + / -
+                    <ul>
+                        <li>Alice-x+John: 1<br>
+                            Alice-x+John: 2<br>
+                            John--x-Alice: 3<br>
+                            John--x-Alice: 4
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li>Text boxes for the Lines
+            <ul>
+                <li>Right ----> Note right of John: Text in note</li>
+                <li>Center ----> Note over Alice,John: A typical interaction</li>
+                <li>One Line ---->  Note over Alice: Text area over 1 person</li>
+            </ul>
+        </li>
+
+        <li>Loops
+            <ul>
+                <li>Loop over same
+                    <ul>
+                        <li>loop Reply every minute<br>
+                            &emsp;John-->John: Great!<br>
+                            end
+                        </li>
+                    </ul>
+                </li>
+
+                <li>Loop over multi
+                    <ul>
+                        <li>loop Reply every minute<br>
+                            &emsp;John-->Alice: Great!<br>
+                            end
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li>Alt (if statement)
+            <ul>
+                <li>Alice->>Bob: Hello Bob, how are you?<br>
+                    alt is sick<br>
+                    &emsp;Bob->>Alice: Not so good :(<br>
+                    else is well<br>
+                    &emsp;Bob->>Alice: Feeling fresh like a daisy<br>
+                    end<br>
+                    opt Extra response<br>
+                    &emsp;Bob->>Alice: Thanks for asking<br>
+                    end
+                </li>
+            </ul>
+        </li>
+
+        <li>Classes
+            <ul>
+                <li>actor ----> Style for the actor box at the top of the diagram. </li>
+                <li>text.actor ----> Styles for text in the actor box at the top of the diagram.</li>
+                <li>actor-line ----> The vertical line for an actor.</li>
+                <li>messageLine0 ----> Styles for the solid message line.</li>
+                <li>messageLine1 ----> Styles for the dotted message line.</li>
+                <li>messageTex ----> Defines styles for the text on the message arrows.</li>
+                <li>labelBox ----> Defines styles label to left in a loop.</li>
+                <li>labelText ----> Styles for the text in label for loops.</li>
+                <li>loopText ----> Styles for the text in the loop box.</li>
+                <li>loopLine ----> Defines styles for the lines in the loop box.</li>
+                <li>note ----> Styles for the note box.</li>
+                <li>noteText ----> Styles for the text on in the note boxes.</li>
+            </ul>
+        </li>   
+    </ul>
+    <a href="#top"><em>Back to the top</em></a>
+    <hr align="left" width="75%">
+    <hr align="left" width="75%">
+
+
+
+<!--*********************************-->
+<!--*********** SYNTAX **************-->
+<!--************ GANTT **************-->
+<!--*********************************-->
+    <h2 id="gantt">Syntax for Gantt Diagrams</h2>
+    <ul>
         <div class="mermaid">
             gantt
                 dateFormat  YYYY-MM-DD
                 title Adding GANTT diagram functionality to mermaid
+
                 section A section
                 Completed task            :done,    des1, 2014-01-06,2014-01-08
                 Active task               :active,  des2, 2014-01-09, 3d
                 Future task               :         des3, after des2, 5d
-                Future task2               :         des4, after des3, 5d
+                Future task2              :         des4, after des3, 5d
+
                 section Critical tasks
                 Completed task in the critical line :crit, done, 2014-01-06,24h
                 Implement parser and jison          :crit, done, after des1, 2d
@@ -77,10 +409,85 @@
                 Future task in critical line        :crit, 5d
                 Create tests for renderer           :2d
                 Add to mermaid                      :1d
-        </div>
-        <hr align="left" width="75%">
 
-        <h4><em>subgraph</em></h4>
+                section Documentation
+                Describe gantt syntax               :active, a1, after des1, 3d
+                Add gantt diagram to demo page      :after a1  , 20h
+                Add another diagram to demo page    :doc1, after a1  , 48h
+
+                section Last section
+                Describe gantt syntax               :after doc1, 3d
+                Add gantt diagram to demo page      :20h
+                Add another diagram to demo page    :48h                    :1d
+        </div>
+
+        <li>Date and Time
+            <ul>
+                <li>YYYY    2014    4 digit year</li>
+                <li>YY    14    2 digit year</li>
+                <li>Q    1..4    Quarter of year. Sets month to first month in quarter.</li>
+                <li>M MM    1..12    Month number</li>
+                <li>MMM MMMM    January..Dec    Month name in locale set by moment.locale()</li>
+                <li>D DD    1..31    Day of month</li>
+                <li>Do    1st..31st    Day of month with ordinal</li>
+                <li>DDD DDDD    1..365    Day of year</li>
+                <li>X    1410715640.579    Unix timestamp</li>
+                <li>x    1410715640579    Unix ms timestamp</li><br>
+
+                <li>Input    Example    Description</li>
+                <li>H HH    0..23    24 hour time</li>
+                <li>h hh    1..12    12 hour time used with a A.</li>
+                <li>a A    am pm    Post or ante meridiem</li>    
+                <li>m mm    0..59    Minutes</li>    
+                <li>s ss    0..59    Seconds</li>    
+                <li>S    0..9    Tenths of a second</li>    
+                <li>SS    0..99    Hundreds of a second</li>  
+                <li>SSS    0..999    Thousandths of a second</li>    
+                <li>Z ZZ    +12:00    Offset from UTC as +-HH:mm, +-HHmm, or Z</li>    
+            </ul>
+        </li>
+
+        <li>MomentJS Time
+            <ul>
+                <li>%a - abbreviated weekday name.</li>
+                <li>%A - full weekday name.</li>
+                <li>%b - abbreviated month name.</li>
+                <li>%B - full month name.</li>
+                <li>%c - date and time, as "%a %b %e %H:%M:%S %Y".</li>
+                <li>%d - zero-padded day of the month as a decimal number [01,31].</li>
+                <li>%e - space-padded day of the month as a decimal number [ 1,31]; equivalent to %_d.</li>
+                <li>%H - hour (24-hour clock) as a decimal number [00,23].</li>
+                <li>%I - hour (12-hour clock) as a decimal number [01,12].</li>
+                <li>%j - day of the year as a decimal number [001,366].</li>
+                <li>%m - month as a decimal number [01,12].</li>
+                <li>%M - minute as a decimal number [00,59].</li>
+                <li>%L - milliseconds as a decimal number [000, 999].</li>
+                <li>%p - either AM or PM.</li>
+                <li>%S - second as a decimal number [00,61].</li>
+                <li>%U - week number of the year (Sunday as the first day of the week) as a decimal number [00,53].</li>
+                <li>%w - weekday as a decimal number [0(Sunday),6].</li>
+                <li>%W - week number of the year (Monday as the first day of the week) as a decimal number [00,53].</li>
+                <li>%x - date, as "%m/%d/%Y".</li>
+                <li>%X - time, as "%H:%M:%S".</li>
+                <li>%y - year without century as a decimal number [00,99].</li>
+                <li>%Y - year with century as a decimal number.</li>
+                <li>%Z - time zone offset, such as "-0700".</li>
+                <li>%% - a literal "%" character.</li>
+            </ul>
+        </li>
+    </ul>
+    <a href="#top"><em>Back to the top</em></a>
+    <hr align="left" width="75%">
+    <hr align="left" width="75%">
+
+
+
+<!--*********************************-->
+<!--*********** SYNTAX **************-->
+<!--********** SUBGRAPH *************-->
+<!--*********************************-->
+    <h2 id="subgraph">Syntax for Subgraph Diagrams</h2>
+    <ul>
         <div class="mermaid">
             graph TB
                 subgraph one
@@ -94,109 +501,40 @@
                 end
                 c1-->a2
         </div>
-        <hr align="left" width="75%">
+    </ul>
 
-        <h4><em>Linked Graphs</em></h4>
+    <a href="#top"><em>Back to the top</em></a>
+    <hr align="left" width="75%">
+    <hr align="left" width="75%">
+
+
+
+<!--*********************************-->
+<!--*********** SYNTAX **************-->
+<!--*********** LINKED **************-->
+<!--*********************************-->
+    <h2 id="linked">Syntax for Linked Diagrams</h2>
+    <ul>
         <div class="mermaid">
             graph LR;
                 A-->B;
                 click A callback "Testing"
                 click B "http://www.github.com" "Clicking this will send you to GitHub"
         </div>
-        <hr align="left" width="75%">
-
-        <h4>Syntax</h4>
-        <ul>
-            <li>Comment ----> %%</li>
-            <li>Graph Direction
-                <ul>
-                    <li>TB - top bottom </li>
-                    <li>BT - bottom top </li>
-                    <li>RL - right left</li>
-                    <li>LR - left right</li>
-                    <li>TD - same as TB</li>
-                </ul>
-            </li>
-            <li>Node ----> node name1</li>
-                <div class="mermaid">
-                    graph LR
-                    id1
-                </div>
-            <li>Node With Text ----> name node1[This is what will be inside the textbox]</li>
-                <div class="mermaid">
-                    graph LR
-                    id1[This is what will be inside the textbox]
-                </div>
-            <li>Node shapes
-                <ul>
-                    <li>Rounded corners ----> ()</li>
-                        <div class="mermaid">
-                            graph LR
-                            id1(This is what will be inside the textbox)
-                        </div>
-
-                    <li>Round node ----> (())</li>
-                        <div class="mermaid">
-                            graph LR
-                            id1((This is what will be inside the textbox))
-                        </div>
-
-                    <li>Asymetric Shape ----> >]</li>
-                        <div class="mermaid">
-                            graph LR
-                            id1>This is what will be inside the textbox]
-                        </div>
-
-                    <li>Rhombus ----> {}</li>
-                        <div class="mermaid">
-                            graph LR
-                            id1{This is what will be inside the textbox}
-                        </div>
-                </ul>
-            </li>
-
-            <li>Link Shapes
-                <ul>
-                    <li>Arrow ----> --></li>
-                        <div class="mermaid">
-                            graph LR
-                                A-->B
-                        </div>
-
-                    <li>Link Open ----> ---</li>
-                        <div class="mermaid">
-                            graph LR
-                                A---B
-                        </div>
-
-                    <li>Dotted Line ----> -.-></li>
-                        <div class="mermaid">
-                            graph LR
-                                A-.->B
-                        </div>
-
-                    <li>Thick Line ----> ==></li>
-                        <div class="mermaid">
-                            graph LR
-                                A==>B
-                        </div>
-
-                    <li>Link with text Box ----> A---|This is the text|B;</li>
-                        <div class="mermaid">
-                            graph LR
-                                A---|This is the text|B;
-                        </div>
-
-                </ul>
-            </li>
-        </ul>
-        
-        
-
-
-
-
-
+    </ul>
+    <a href="#top"><em>Back to the top</em></a>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
