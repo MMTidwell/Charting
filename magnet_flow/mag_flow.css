@@ -10,8 +10,9 @@ h1 {
 
 #host_1 {
 	border: 2px solid black;
-	float: Left;
-	margin: 0px 15px 0px 0px;
+	float: left;
+	/*margin: 0px 15px 0px 0px;*/
+	margin: 0% 21% 2% 21%;
 }
 
 div.mermaid {
