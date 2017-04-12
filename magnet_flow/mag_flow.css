@@ -1,7 +1,20 @@
 h1 {
 	text-align: center;
+	padding: 2%;
 }
 
 #host {
 	border: 2px solid black;
+	float: Left;
 }
+
+#host_1 {
+	border: 2px solid black;
+	float: Left;
+	margin: 0px 15px 0px 0px;
+}
+
+div.mermaid {
+	margin: 0;
+}
+

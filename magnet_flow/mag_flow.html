@@ -5,138 +5,359 @@
 	<title>Magnet Flow Chart</title>
 
 	<link rel="stylesheet" type="text/css" href="mag_flow.css">
-    <link rel="stylesheet" href="node_modules/mermaid/dist/mermaid.forest.css">
+    <link rel="stylesheet" href="node_modules/mermaid/dist/mermaid.css">
+    <!-- <link rel="stylesheet" href="node_modules/mermaid/dist/mermaid.dark.css"> -->
+    <!-- <link rel="stylesheet" href="node_modules/mermaid/dist/mermaid.forest.css"> -->
     <script src="node_modules/mermaid/dist/mermaid.min.js"></script>
 </head>
 <body>
+<!-- **************************************** -->
+<!-- 				CHART 1					  -->
+<!-- **************************************** -->
+    <div class="mermaid" align="center" id="host_1">
+        graph RL
+            subgraph Host 1
+            1(VM1 OS IP ADDRESS)-->DS1
+            style 1 fill:pink,stroke:#333,stroke-width:4px;
+            2>VM2 OS IP ADDRESS]-->DS3
+            2>VM2 OS IP ADDRESS]-.->DS6
+            style 2 fill:lightblue,stroke:#333,stroke-width:4px;
+            end
+            
+            subgraph Host 2
+            3(VM3 OS IP ADDRESS)-->DS5
+            style 3 fill:indianred,stroke:#333,stroke-width:4px;
+            4(VM4 OS IP ADDRESS)-->DS2
+            style 4 fill:lightgreen,stroke:#333,stroke-width:4px;
+            5(VM5 OS IP ADDRESS)-->DS2
+            style 5 fill:lightgreen,stroke:#333,stroke-width:4px;
+            6(VM6 OS IP ADDRESS)-->DS5
+            style 6 fill:indianred,stroke:#333,stroke-width:4px;
+            7>VM7 OS IP ADDRESS]-->DS5
+            7>VM7 OS IP ADDRESS]-.->DS3
+            style 7 fill:indianred,stroke:#333,stroke-width:4px;
+            8>VM8 OS IP ADDRESS]-->DS1
+            8>VM8 OS IP ADDRESS]-.->DS3
+            style 8 fill:pink,stroke:#333,stroke-width:4px;
+            9(VM9 OS IP ADDRESS)-->DS1
+            style 9 fill:pink,stroke:#333,stroke-width:4px;
+            10(VM10 OS IP ADDRESS)-->DS5
+            style 10 fill:indianred,stroke:#333,stroke-width:4px;
+            11(VM11 OS IP ADDRESS)-->DS5
+            style 11 fill:indianred,stroke:#333,stroke-width:4px;
+            12(VM12 OS IP ADDRESS)-->DS5
+            style 12 fill:indianred,stroke:#333,stroke-width:4px;
+            13(VM13 OS IP ADDRESS)-->DS5
+            style 13 fill:indianred,stroke:#333,stroke-width:4px;
+            14(VM14 OS IP ADDRESS)-->DS5
+            style 14 fill:indianred,stroke:#333,stroke-width:4px;
+            15(VM15 OS IP ADDRESS)-->DS5
+            style 15 fill:indianred,stroke:#333,stroke-width:4px;
+            16>VM16 OS IP ADDRESS]-->DS5
+            16>VM16 OS IP ADDRESS]-.->DS4
+            style 16 fill:indianred,stroke:#333,stroke-width:4px;
+            17(VM17 OS IP ADDRESS)-->DS5
+            style 17 fill:indianred,stroke:#333,stroke-width:4px;
+            18(VM18 OS IP ADDRESS)-->DS2
+            style 18 fill:lightgreen,stroke:#333,stroke-width:4px;
+            19(VM19 OS IP ADDRESS)-->DS5
+            style 19 fill:indianred,stroke:#333,stroke-width:4px;
+            20(VM20 OS IP ADDRESS)-->DS5
+            style 20 fill:indianred,stroke:#333,stroke-width:4px;
+            21(VM21 OS IP ADDRESS)-->DS5
+            style 21 fill:indianred,stroke:#333,stroke-width:4px;
+            22(VM22 OS IP ADDRESS)-->DS5
+            style 22 fill:indianred,stroke:#333,stroke-width:4px;
+            23>VM23 OS IP ADDRESS]-->DS5
+            23>VM23 OS IP ADDRESS]-.->DS2
+            style 23 fill:indianred,stroke:#333,stroke-width:4px;
+            24(VM24 OS IP ADDRESS)-->DS5
+            style 24 fill:indianred,stroke:#333,stroke-width:4px;
+            25(VM25 OS IP ADDRESS)-->DS5
+            style 25 fill:indianred,stroke:#333,stroke-width:4px;
+            26(VM26 OS IP ADDRESS)-->DS5
+            style 26 fill:indianred,stroke:#333,stroke-width:4px;
+            27(VM27 OS IP ADDRESS)-->DS5
+            style 27 fill:indianred,stroke:#333,stroke-width:4px;
+            28(VM28 OS IP ADDRESS)-->DS5
+            style 28 fill:indianred,stroke:#333,stroke-width:4px;
+            29(VM29 OS IP ADDRESS)-->DS5
+            style 29 fill:indianred,stroke:#333,stroke-width:4px;
+            end
+            
+            subgraph Host 3
+            30(VM30 OS IP ADDRESS)-->DS5
+            style 30 fill:indianred,stroke:#333,stroke-width:4px;
+            end
+
+            subgraph Host 4
+            34(VM34 OS IP ADDRESS)-->DS3
+            style 34 fill:lightblue,stroke:#333,stroke-width:4px;
+            end
+
+            subgraph Host 5
+            60>VM60 OS IP ADDRESS]-->DS2
+            60>VM60 OS IP ADDRESS]-.->DS2
+            style 60 fill:lightgreen,stroke:#333,stroke-width:4px;
+            end
+
+			subgraph DataStore
+				DS1((DS1));
+	            style DS1 fill:pink,stroke:#333,stroke-width:4px;
+				DS2((DS2));
+	            style DS2 fill:lightgreen,stroke:#333,stroke-width:4px;
+				DS3((DS3));
+	            style DS3 fill:lightblue,stroke:#333,stroke-width:4px;
+				DS4((DS4));
+	            style DS4 fill:lavender,stroke:#333,stroke-width:4px;
+				DS5((DS5));
+	            style DS5 fill:indianred,stroke:#333,stroke-width:4px;
+				DS6((DS6));
+	            style DS6 fill:lightsalmon,stroke:#333,stroke-width:4px;
+    </div>
+
+<!-- **************************************** -->
+<!-- 				CHART 2					  -->
+<!-- **************************************** -->
+    <div class="mermaid" align="center" id="host_1">
+        graph RL
+            1(VM1 OS IP ADDRESS)-->DS1
+            style 1 fill:pink,stroke:#333,stroke-width:4px;
+            2>VM2 OS IP ADDRESS]-->DS3
+            2>VM2 OS IP ADDRESS]-.->DS6
+            style 2 fill:lightblue,stroke:#333,stroke-width:4px;
+
+            3(VM3 OS IP ADDRESS)-->DS5
+            style 3 fill:indianred,stroke:#333,stroke-width:4px;
+            4(VM4 OS IP ADDRESS)-->DS2
+            style 4 fill:lightgreen,stroke:#333,stroke-width:4px;
+            5(VM5 OS IP ADDRESS)-->DS2
+            style 5 fill:lightgreen,stroke:#333,stroke-width:4px;
+            6(VM6 OS IP ADDRESS)-->DS5
+            style 6 fill:indianred,stroke:#333,stroke-width:4px;
+            7>VM7 OS IP ADDRESS]-->DS5
+            7>VM7 OS IP ADDRESS]-.->DS3
+            style 7 fill:indianred,stroke:#333,stroke-width:4px;
+            8>VM8 OS IP ADDRESS]-->DS1
+            8>VM8 OS IP ADDRESS]-.->DS3
+            style 8 fill:pink,stroke:#333,stroke-width:4px;
+            9(VM9 OS IP ADDRESS)-->DS1
+            style 9 fill:pink,stroke:#333,stroke-width:4px;
+            10(VM10 OS IP ADDRESS)-->DS5
+            style 10 fill:indianred,stroke:#333,stroke-width:4px;
+            11(VM11 OS IP ADDRESS)-->DS5
+            style 11 fill:indianred,stroke:#333,stroke-width:4px;
+            12(VM12 OS IP ADDRESS)-->DS5
+            style 12 fill:indianred,stroke:#333,stroke-width:4px;
+            13(VM13 OS IP ADDRESS)-->DS5
+            style 13 fill:indianred,stroke:#333,stroke-width:4px;
+            14(VM14 OS IP ADDRESS)-->DS5
+            style 14 fill:indianred,stroke:#333,stroke-width:4px;
+            15(VM15 OS IP ADDRESS)-->DS5
+            style 15 fill:indianred,stroke:#333,stroke-width:4px;
+            16>VM16 OS IP ADDRESS]-->DS5
+            16>VM16 OS IP ADDRESS]-.->DS4
+            style 16 fill:indianred,stroke:#333,stroke-width:4px;
+            17(VM17 OS IP ADDRESS)-->DS5
+            style 17 fill:indianred,stroke:#333,stroke-width:4px;
+            18(VM18 OS IP ADDRESS)-->DS2
+            style 18 fill:lightgreen,stroke:#333,stroke-width:4px;
+            19(VM19 OS IP ADDRESS)-->DS5
+            style 19 fill:indianred,stroke:#333,stroke-width:4px;
+            20(VM20 OS IP ADDRESS)-->DS5
+            style 20 fill:indianred,stroke:#333,stroke-width:4px;
+            21(VM21 OS IP ADDRESS)-->DS5
+            style 21 fill:indianred,stroke:#333,stroke-width:4px;
+            22(VM22 OS IP ADDRESS)-->DS5
+            style 22 fill:indianred,stroke:#333,stroke-width:4px;
+            23>VM23 OS IP ADDRESS]-->DS5
+            23>VM23 OS IP ADDRESS]-.->DS2
+            style 23 fill:indianred,stroke:#333,stroke-width:4px;
+            24(VM24 OS IP ADDRESS)-->DS5
+            style 24 fill:indianred,stroke:#333,stroke-width:4px;
+            25(VM25 OS IP ADDRESS)-->DS5
+            style 25 fill:indianred,stroke:#333,stroke-width:4px;
+            26(VM26 OS IP ADDRESS)-->DS5
+            style 26 fill:indianred,stroke:#333,stroke-width:4px;
+            27(VM27 OS IP ADDRESS)-->DS5
+            style 27 fill:indianred,stroke:#333,stroke-width:4px;
+            28(VM28 OS IP ADDRESS)-->DS5
+            style 28 fill:indianred,stroke:#333,stroke-width:4px;
+            29(VM29 OS IP ADDRESS)-->DS5
+            style 29 fill:indianred,stroke:#333,stroke-width:4px;
+
+            30(VM30 OS IP ADDRESS)-->DS5
+            style 30 fill:indianred,stroke:#333,stroke-width:4px;
+
+			34(VM34 OS IP ADDRESS)-->DS3
+            style 34 fill:lightblue,stroke:#333,stroke-width:4px;
+
+            60>VM60 OS IP ADDRESS]-->DS2
+            60>VM60 OS IP ADDRESS]-.->DS5
+	        style 60 fill:lightgreen,stroke:#333,stroke-width:4px;
+
+			DS1((DS1));
+            style DS1 fill:pink,stroke:#333,stroke-width:4px;
+			DS2((DS2));
+            style DS2 fill:lightgreen,stroke:#333,stroke-width:4px;
+			DS3((DS3));
+            style DS3 fill:lightblue,stroke:#333,stroke-width:4px;
+			DS4((DS4));
+            style DS4 fill:lavender,stroke:#333,stroke-width:4px;
+			DS5((DS5));
+            style DS5 fill:indianred,stroke:#333,stroke-width:4px;
+			DS6((DS6));
+            style DS6 fill:lightsalmon,stroke:#333,stroke-width:4px;
+    </div>
+
+<!-- **************************************** -->
+<!-- 				CHART 3					  -->
+<!-- **************************************** -->
+    <div id="host">
+		<h1>DataStores</h1>
+		<div class="mermaid" align="center">
+			graph LR;
+				DS1((DS1));
+	            style DS1 fill:pink,stroke:#333,stroke-width:4px;
+
+				DS2((DS2));
+	            style DS2 fill:lightgreen,stroke:#333,stroke-width:4px;
+
+				DS3((DS3));
+	            style DS3 fill:lightblue,stroke:#333,stroke-width:4px;
+
+				DS4((DS4));
+	            style DS4 fill:lavender,stroke:#333,stroke-width:4px;
+
+				DS5((DS5));
+	            style DS5 fill:indianred,stroke:#333,stroke-width:4px;
+
+				DS6((DS6));
+	            style DS6 fill:lightsalmon,stroke:#333,stroke-width:4px;
+		</div>
+	</div>
 	<div id="host">
 		<h1>Host 1</h1>
-		<div class="mermaid">
+		<div class="mermaid" align="center">
 			graph RL;
-				vm1[VM Name    Guest OS    IP Address]-->DataStore1
+				DS1((DS1));
+	            style DS1 fill:pink,stroke:#333,stroke-width:4px;
 
-				vm2[VM Name    Guest OS    IP Address]-->DataStore2
+				DS3((DS3));
+	            style DS3 fill:lightblue,stroke:#333,stroke-width:4px;
 
-				vm3[VM Name    Guest OS    IP Address]-->DataStore3
+	            DS6((DS6));
+	            style DS6 fill:lightsalmon,stroke:#333,stroke-width:4px;
 
-				vm4[VM Name    Guest OS    IP Address]-->DataStore4
+				1(VM1 OS IP address)-->DS1;
+	            style 1 fill:pink,stroke:#333,stroke-width:4px;
 
-				vm5[VM Name    Guest OS    IP Address]-->DataStore5
-				vm1[VM Name    Guest OS    IP Address]-->DataStore1
-
-				vm2[VM Name    Guest OS    IP Address]-->DataStore2
-
-				vm3[VM Name    Guest OS    IP Address]-->DataStore3
-
-				vm4[VM Name    Guest OS    IP Address]-->DataStore4
-
-				vm5[VM Name    Guest OS    IP Address]-->DataStore5
-				vm1[VM Name    Guest OS    IP Address]-->DataStore1
+	            2>VM2 OS IP address]-->DS3;
+	            2>VM2 OS IP address]-.->DS6;
+	            style 2 fill:lightblue,stroke:#333,stroke-width:4px;
 		</div>
-	</div>
-	
+	</div>	
 	<div id="host">
 		<h1>Host 2</h1>
-		<div class="mermaid">
+		<div class="mermaid" align="center">
 			graph RL;
-				vm1[VM Name    Guest OS    IP Address]-->DataStore1
+				DS1((DS1));
+	            style DS1 fill:pink,stroke:#333,stroke-width:4px;
+				DS2((DS2));
+	            style DS2 fill:lightgreen,stroke:#333,stroke-width:4px;
+				DS3((DS3));
+	            style DS3 fill:lightblue,stroke:#333,stroke-width:4px;
+				DS4((DS4));
+	            style DS4 fill:lavender,stroke:#333,stroke-width:4px;
+				DS5((DS5));
+	            style DS5 fill:indianred,stroke:#333,stroke-width:4px;
+				
+				3(VM3 OS IP ADDRESS)-->DS5
+            	style 3 fill:indianred,stroke:#333,stroke-width:4px;
 
-				vm2[VM Name    Guest OS    IP Address]-->DataStore2
+	            4(VM4 OS IP ADDRESS)-->DS2
+	            style 4 fill:lightgreen,stroke:#333,stroke-width:4px;
 
-				vm3[VM Name    Guest OS    IP Address]-->DataStore3
-
-				vm4[VM Name    Guest OS    IP Address]-->DataStore4
-
-				vm5[VM Name    Guest OS    IP Address]-->DataStore5
-				vm1[VM Name    Guest OS    IP Address]-->DataStore1
-
-				vm2[VM Name    Guest OS    IP Address]-->DataStore2
-
-				vm3[VM Name    Guest OS    IP Address]-->DataStore3
-
-				vm4[VM Name    Guest OS    IP Address]-->DataStore4
-
-				vm5[VM Name    Guest OS    IP Address]-->DataStore5
-				vm2[VM Name    Guest OS    IP Address]-->DataStore2
+	            5(VM5 OS IP ADDRESS)-->DS2
+	            style 5 fill:lightgreen,stroke:#333,stroke-width:4px;
+	            
+	            6(VM6 OS IP ADDRESS)-->DS5
+	            style 6 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            7>VM7 OS IP ADDRESS]-->DS5
+	            7>VM7 OS IP ADDRESS]-.->DS3
+	            style 7 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            8>VM8 OS IP ADDRESS]-->DS1
+	            8>VM8 OS IP ADDRESS]-.->DS3
+	            style 8 fill:pink,stroke:#333,stroke-width:4px;
+	            
+	            9(VM9 OS IP ADDRESS)-->DS1
+	            style 9 fill:pink,stroke:#333,stroke-width:4px;
+	            
+	            10(VM10 OS IP ADDRESS)-->DS5
+	            style 10 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            11(VM11 OS IP ADDRESS)-->DS5
+	            style 11 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            12(VM12 OS IP ADDRESS)-->DS5
+	            style 12 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            13(VM13 OS IP ADDRESS)-->DS5
+	            style 13 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            14(VM14 OS IP ADDRESS)-->DS5
+	            style 14 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            15(VM15 OS IP ADDRESS)-->DS5
+	            style 15 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            16>VM16 OS IP ADDRESS]-->DS5
+	            16>VM16 OS IP ADDRESS]-.->DS4
+	            style 16 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            17(VM17 OS IP ADDRESS)-->DS5
+	            style 17 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            18(VM18 OS IP ADDRESS)-->DS2
+	            style 18 fill:lightgreen,stroke:#333,stroke-width:4px;
+	            
+	            19(VM19 OS IP ADDRESS)-->DS5
+	            style 19 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            20(VM20 OS IP ADDRESS)-->DS5
+	            style 20 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            21(VM21 OS IP ADDRESS)-->DS5
+	            style 21 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            22(VM22 OS IP ADDRESS)-->DS5
+	            style 22 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            23>VM23 OS IP ADDRESS]-->DS5
+	            23>VM23 OS IP ADDRESS]-.->DS2
+	            style 23 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            24(VM24 OS IP ADDRESS)-->DS5
+	            style 24 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            25(VM25 OS IP ADDRESS)-->DS5
+	            style 25 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            26(VM26 OS IP ADDRESS)-->DS5
+	            style 26 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            27(VM27 OS IP ADDRESS)-->DS5
+	            style 27 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            28(VM28 OS IP ADDRESS)-->DS5
+	            style 28 fill:indianred,stroke:#333,stroke-width:4px;
+	            
+	            29(VM29 OS IP ADDRESS)-->DS5
+	            style 29 fill:indianred,stroke:#333,stroke-width:4px;
 		</div>
-	</div>
+	</div>	
 
-	<div id="host">
-		<h1>Host 3</h1>
-			<div class="mermaid">
-				graph RL;
-					vm1[VM Name    Guest OS    IP Address]-->DataStore1
-
-					vm2[VM Name    Guest OS    IP Address]-->DataStore2
-
-					vm3[VM Name    Guest OS    IP Address]-->DataStore3
-
-					vm4[VM Name    Guest OS    IP Address]-->DataStore4
-
-					vm5[VM Name    Guest OS    IP Address]-->DataStore5
-					vm1[VM Name    Guest OS    IP Address]-->DataStore1
-
-					vm2[VM Name    Guest OS    IP Address]-->DataStore2
-
-					vm3[VM Name    Guest OS    IP Address]-->DataStore3
-
-					vm4[VM Name    Guest OS    IP Address]-->DataStore4
-
-					vm5[VM Name    Guest OS    IP Address]-->DataStore5
-					vm3[VM Name    Guest OS    IP Address]-->DataStore3
-			</div>
-	</div>
-
-	<div id="host">
-		<h1>Host 4</h1>
-		<div class="mermaid">
-			graph RL;
-				vm1[VM Name    Guest OS    IP Address]-->DataStore1
-
-				vm2[VM Name    Guest OS    IP Address]-->DataStore2
-
-				vm3[VM Name    Guest OS    IP Address]-->DataStore3
-
-				vm4[VM Name    Guest OS    IP Address]-->DataStore4
-
-				vm5[VM Name    Guest OS    IP Address]-->DataStore5
-				vm1[VM Name    Guest OS    IP Address]-->DataStore1
-
-				vm2[VM Name    Guest OS    IP Address]-->DataStore2
-
-				vm3[VM Name    Guest OS    IP Address]-->DataStore3
-
-				vm4[VM Name    Guest OS    IP Address]-->DataStore4
-
-				vm5[VM Name    Guest OS    IP Address]-->DataStore5
-				vm4[VM Name    Guest OS    IP Address]-->DataStore4
-		</div>
-	</div>
-
-	<div id="host">
-		<h1>Host 5</h1>
-		<div class="mermaid">
-			graph RL;
-				vm1[VM Name    Guest OS    IP Address]-->DataStore1
-
-				vm2[VM Name    Guest OS    IP Address]-->DataStore2
-
-				vm3[VM Name    Guest OS    IP Address]-->DataStore3
-
-				vm4[VM Name    Guest OS    IP Address]-->DataStore4
-
-				vm5[VM Name    Guest OS    IP Address]-->DataStore5
-				vm1[VM Name    Guest OS    IP Address]-->DataStore1
-
-				vm2[VM Name    Guest OS    IP Address]-->DataStore2
-
-				vm3[VM Name    Guest OS    IP Address]-->DataStore3
-
-				vm4[VM Name    Guest OS    IP Address]-->DataStore4
-
-				vm5[VM Name    Guest OS    IP Address]-->DataStore5
-				vm5[VM Name    Guest OS    IP Address]-->DataStore5
-		</div>
-	</div>
 </body>
 </html>
