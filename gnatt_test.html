@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Gantt Testing</title>
+	<link rel="stylesheet" href="gantt_test.css">
+	<link rel="stylesheet" href="node_modules/mermaid/dist/mermaid.css">
+    <!-- <link rel="stylesheet" href="node_modules/mermaid/dist/mermaid.dark.css"> -->
+    <!-- <link rel="stylesheet" href="node_modules/mermaid/dist/mermaid.forest.css"> -->
+	<script src="node_modules/mermaid/dist/mermaid.js"></script>
+</head>
+<body>
+	<div class="mermaid">
+		gantt  
+	        dateFormat  YYYY-MM-DD
+	        title Testing Gantt Charts
+
+	        section Phase 1 Name
+	        Activity 1            :    		done,    	des1, 		2017-04-05, 		2017-04-08
+	        Activity 2            :    		active,  	des2, 		2017-04-09, 		2017-04-12
+	        Activity 3            :             		des3, 		2017-04-12, 		5d
+	        Activity 4            :             		des4, 		after des3, 		5d
+
+	        section Phase 2 Name
+	        Activity 5            : crit, 	done,       			2017-04-04, 		24h
+	        Activity 6            : crit, 	done,       			after des1, 		2d
+	        Activity 7            : crit, 	active,             						3d
+	        Activity 8            : crit,                 								5d
+	        Activity 9            :                   									2d
+	        Activity 10           :                   									1d
+
+	        section Phase 3 Name
+	        Activity 11            :   		active,   	a1, 		after des1, 		3d
+	        Activity 12            :        after 		a1,			 					20h
+	        Activity 13            :        			doc1,  		after a1, 			48h
+
+	        section Phase 4 Name
+	        Activity 12            :           						after doc1, 		3d
+	        Activity 15            :                   									20h
+	        Activity 16            :                   									48h
+
+			section Phase 5 Name
+	        Activity 17            :    	done,    	des5, 		2017-04-07, 		2017-04-08
+			Activity 18			   : crit,	active,		des6,		after des1,			7d
+			Activity 19			   : 		active,		des7,		after des6,			3h
+	</div>
+</body>
+</html>
+
