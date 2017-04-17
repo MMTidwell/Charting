@@ -5,3 +5,8 @@ body {
 h1 {
 	text-align: center;
 }
+
+.top {
+	display: inline-block;
+	margin: 2%;
+}
