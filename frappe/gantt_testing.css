@@ -1,3 +1,8 @@
 body {
 	background: black;
 }
+
+.today-highlight {
+	text-align: center;
+	background-color: red;
+}
