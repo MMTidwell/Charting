@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Frappe-Gantt</title>
+	<link rel="stylesheet" type="text/css" href="gantt_testing.css">
+	<script src="gantt-master/Snap.svg-0.5.1/dist/snap.svg.js"></script>
+	<script src="http://momentjs.com/downloads/moment.js"></script>
+	<script src="gantt-master/dist/frappe-gantt.js"></script>
+</head>
+<body>
+	<div class="gantt-container">
+		<svg id="gantt"></svg>
+	</div>
+
+	<script>
+		console.log("THis and That")
+		var tasks = [
+		  {
+		    id: 'Task 1',
+		    name: '1',
+		    start: '2017-04-10',
+		    end: '2017-04-11',
+		    progress: 20
+		  },
+		  {
+		    id: 'Task 2',
+		    name: '2',
+		    start: '2017-04-11',
+		    end: '2017-04-12',
+		    progress: 20,
+		    dependencies: 'Task 1'
+		  },
+		  {
+		    id: 'Task 3',
+		    name: '3',
+		    start: '2017-04-12',
+		    end: '2017-04-13',
+		    progress: 20,
+		    dependencies: 'Task 2'
+		  }
+
+		]
+		var gantt = new Gantt("#gantt", tasks);
+
+	</script>
+</body>
+</html>
