@@ -12,46 +12,50 @@
     <script src="../node_modules/mermaid/dist/mermaid.js"></script>
 </head>
 <body>
+    <div class="mermaid" id="side">
+        graph TD;
+            A-->B;           
+            A-->C;
+            B-->D;
+            C-->D;
+    </div>
+    <div class="mermaid" id="side">
+        sequenceDiagram
+            participant Alice
+            participant Bob
+            Alice->John: Hello John, how are you?
+            loop Healthcheck
+                John->John: Fight against hypochondria
+            end
+            Note right of John: Rational thoughts <br/>prevail...
+            John-->Alice: Great!
+            John->Bob: How about you?
+            Bob-->John: Jolly good!  
+    </div>
 	<div class="mermaid">
 		gantt
 			dateFormat	YYYY-MM-DD
 			title IT Projects
 
 			section Project 1
-			Detail 1	: crit,		done,		job1,		2017-04-10,		5d
-			Detail 2 	: crit, 	done,		job2, 		after job1,		2d
-			Detail 3	:						job3,		after job2,		3d
-			Detail 4	:						job4,		2017-04-20,		10d
+			Detail 1								: crit,		done,		job1,		2017-04-10,		5d
+			Detail 2 this is a really long name 	: crit, 	done,		job2, 		after job1,		2d
+			Detail 3								:						job3,		after job2,		3d
+			Detail 4								:						job4,		2017-04-20,		10d
 
 			section Project 2
-			Detail 5	: crit,  	active,		job5, 		2017-04-13,		5d
-			Detail 6 	: crit, 				job6,		after job5,		7d
-			Detail 7	: crit,					job7,		after job6,		3d
-			Detail 8	: 						job8,		after job7,		2d
-
-			section Project 3
-			Detail 9	:  		 	done,		job9, 		2017-04-11,		5d
-			Detail 10 	:  			active,		job10,		after job9,		7d
-			Detail 11	: 						job11,		after job10,	7d
-			Detail 12	: crit, 				job12,		2017-04-28,		3d
-
-			section Project 4
-			Detail 1	: crit,		done,		job1,		2017-04-10,		5d
-			Detail 2 	: crit, 	done,		job2, 		after job1,		2d
-			Detail 3	:						job3,		after job2,		3d
-			Detail 4	:						job4,		2017-04-20,		10d
-
-			section Project 5
-			Detail 5	: crit,  	active,		job5, 		2017-04-13,		5d
-			Detail 6 	: crit, 				job6,		after job5,		7d
-			Detail 7	: crit,					job7,		after job6,		3d
-			Detail 8	: 						job8,		after job7,		2d
-
-			section Project 6
-			Detail 9	:  		 	done,		job9, 		2017-04-11,		5d
-			Detail 10 	:  			active,		job10,		after job9,		7d
-			Detail 11	: 						job11,		after job10,	7d
-			Detail 12	: crit, 				job12,		2017-04-28,		3d
+			Detail 5								: crit,  	active,		job5, 		2017-04-13,		5d
+			Detail 6 								: crit, 				job6,		after job5,		7d
+			Detail 7								: crit,					job7,		after job6,		3d
+			Detail 8								: 						job8,		after job7,		2d
 	</div>
+	<hr align="left" width="100%">
+    <hr align="left" width="100%">
+
+    <h1>Notes on editing the JS</h1> 
+    <ul>
+    	<li>D3.JS goes to about 9717
+    	</li>
+    </ul>
 </body>
 </html>
